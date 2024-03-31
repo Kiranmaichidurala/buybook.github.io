@@ -1,0 +1,274 @@
+<html>
+    <head>
+        <title>shopping cart</title>
+        <link rel='stylesheet' href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Galdeano&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+            
+            body{
+                font-family: "Roboto", sans-serif;
+            }
+            
+            *{
+                margin:0;
+                padding:0;
+            }
+            i{
+                margin-right: 10px;
+            }
+            
+            input:focus,
+            button:focus,
+            .form-control:focus{
+                outline:none;
+                box-shadow:none;
+            }
+            
+            .form-control:disabled, .form-control[readonly]{
+                background-color:#fff;
+            }
+            
+            .table tr,
+            .table tr td{
+                vertical-align: middle;
+            }
+            
+            .button-container{
+                display: flex;
+                align-items: center;
+            }
+            
+            .button-container .form-control{
+                max-width: 80px;
+                text-align: center;
+                display: inline-block;
+                margin: 0px 5px;
+            }
+            
+            #myTable .form-control{
+                width: auto;
+                display: inline-block;
+            }
+            
+            .cart-qty-plus,
+            .cart-qty-minus{
+                width: 38px;
+                height:38px;
+                background-color:#fff;
+                border: 1px solid #ced4da;
+                border-radius: .25rem;
+            }
+            
+            .cart-qty-plus:hover,
+            .cart-qty-minus:hover{
+                background-color:#5161ce;
+                color:#fff;
+            }
+            
+            .imp-prdct{
+                width: 50px;
+                height: 50px;
+                background-color:#5161ce;
+                border-radius: 4px;
+            }
+            
+            .img-prdct img{
+                width: 100%;
+            }
+            
+            .btn{
+    margin-top: 1rem;
+    display:inline-block;
+    padding:.9rem 3rem;
+    border-radius: .5rem;
+    color:#fff;
+    background-color:#0B6623;
+    font-size:1.7rem;
+    cursor: pointer;
+    font-weight:500;
+    position: absolute;
+}
+        </style>
+    </head>
+    <body>
+        <div class="container-fluid mt-5">
+        <h2 class="mb-5 text-center">shopping cart</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="table-responsive">
+                    <table id="myTable" class="table">
+                        <thead>
+                            <tr>
+                                <th>Product</th>
+                                <th>Name</th>
+                                <th>QTY</th>
+                                <th>Price</th>
+                                <th class="text-right">
+                                    <span id="amount" class="amount">Amount</span>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="product-img">
+                                        <div class="img-prdct">
+                                            <img src="https://rukminim2.flixcart.com/image/850/1000/l1xwqkw0/diary-notebook/c/c/o/case-bound-a-4-book-288-pages-case-bound-a4-book-single-line-288-original-imagde6tmfjzufkk.jpeg?q=90&crop=false" alt="" width="130" height="130">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>Product One</p>
+                                </td>
+                                <td>
+                                    <div class="button-container">
+                                        <button class="cart-qty-plus" type="button" value="+">+</button>
+                                        <input type="text" name="qty" min="0" class="qty form-control" value="0"/>
+                                        <button class="cart-qty-minus" type="button" value="-">-</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" value="15.99" class="price form-control" disabled>
+                                </td>
+                                <td align="right">$<span id="amount" class="amount">0</span>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class="product-img">
+                                        <div class="img-prdct">
+                                            <img src="https://m.media-amazon.com/images/I/61uduKv8n4L._AC_UF1000,1000_QL80_.jpg" alt="" width="130" height="130">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>Product two</p>
+                                </td>
+                                <td>
+                                    <div class="button-container">
+                                        <button class="cart-qty-plus" type="button" value="+">+</button>
+                                        <input type="text" name="qty" min="0" class="qty form-control" value="0"/>
+                                        <button class="cart-qty-minus" type="button" value="-">-</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" value="15.99" class="price form-control" disabled>
+                                </td>
+                                <td align="right">$<span id="amount" class="amount">0</span>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class="product-img">
+                                        <div class="img-prdct">
+                                            <img src="https://m.media-amazon.com/images/I/71Nu2eNEk8L._AC_UF1000,1000_QL80_.jpg" alt="" width="130" height="130">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>Product Three</p>
+                                </td>
+                                <td>
+                                    <div class="button-container">
+                                        <button class="cart-qty-plus" type="button" value="+">+</button>
+                                        <input type="text" name="qty" min="0" class="qty form-control" value="0"/>
+                                        <button class="cart-qty-minus" type="button" value="-">-</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" value="15.99" class="price form-control" disabled>
+                                </td>
+                                <td align="right">$<span id="amount" class="amount">0</span>
+                                </td>
+                            </tr>
+                            
+                            <tr>
+                                <td>
+                                    <div class="product-img">
+                                        <div class="img-prdct">
+                                            <img src="https://bpbonline.com/cdn/shop/products/9789388176620_800x.jpg?v=1671694030" alt="" width="130" height="130">
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <p>Product Four</p>
+                                </td>
+                                <td>
+                                    <div class="button-container">
+                                        <button class="cart-qty-plus" type="button" value="+">+</button>
+                                        <input type="text" name="qty" min="0" class="qty form-control" value="0"/>
+                                        <button class="cart-qty-minus" type="button" value="-">-</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <input type="text" value="15.99" class="price form-control" disabled>
+                                </td>
+                                <td align="right">$<span id="amount" class="amount">0</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4"></td>
+                                <td align="right">
+                                    <strong>Total = $<span id="total" class="total">0</span>
+                                    </strong>
+                                </td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <a href="login1.html" class="btn">Go to payment</a>
+    </div>
+        
+        <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
+        <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
+        <script>
+            $(document).ready(function(){
+    update_amounts();
+    $('.qty,.price').on('keyup keypress blur change',function(e){
+        update_amounts();
+    });
+});
+
+function update_amounts(){
+    var sum=0.0;
+    $('#myTable > tbody > tr').each(function(){
+        var qty=$(this).find('.qty').val();
+        var price=$(this).find('.price').val();
+        var amount=(qty*price)
+        sum+=amount;
+        $(this).find('.amount').text(''+amount);
+    });
+    $('.total').text(sum);
+}
+
+var incrementQTY;
+var decrementQTY;
+var plusBtn=$(".cart-qty-plus");
+var minusBtn =$(".cart-qty-minus");
+var incrementQTY = plusBtn.click(function(){
+    var $n = $(this)
+            .parent(".button-container")
+            .find(".qty");
+            $n.val(Number($n.val())+1);
+            update_amounts();
+});
+
+var decrementQTY = minusBtn.click(function(){
+    var $n=$(this)
+            .parent(".button-container")
+            .find(".qty");
+            var QtyVal = Number($n.val());
+            if(QtyVal>0){
+                $n.val(QtyVal-1);
+            }
+            update_amounts();
+});
+</script>
+    </body>
+</html>
